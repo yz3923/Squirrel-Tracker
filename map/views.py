@@ -6,7 +6,7 @@ from .models import Squirrel
 
 def index(request):
     context = {
-        'mapping_squirrels' : Squirrel.objects.all()[:50]
+        'mapping_squirrels' : Squirrel.objects.all()[:90]
     }
     return render(request, 'map/index.html', context)
 # Create your views here.
