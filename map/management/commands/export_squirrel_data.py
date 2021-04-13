@@ -5,7 +5,6 @@ from map.models import Squirrel
 import sys
 
 import csv
-import control
 
 class Command(BaseCommand):
     help = 'export squirrel data'
