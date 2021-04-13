@@ -3,5 +3,5 @@ from map.models import Squirrel
 
 class form_sightings(ModelForm):
     class = Meta:
-        model = map.models
+        model = Squirrel
         fields = ['latitude', 'longitude', 'unique_squirrel_id', 'shift', 'date', 'age']
