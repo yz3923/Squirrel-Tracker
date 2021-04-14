@@ -3,16 +3,11 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
-    latitude = models.FloatField(
-        help_text = _('latitude of point'),
-    )
+    latitude = models.FloatField()
     
-    longitude = models.FloatField(
-        help_text = _('longitude of point'),
-    )
+    longitude = models.FloatField()
 
     unique_squirrel_id = models.CharField(
-        help_text = _('unique id number for squirrel'),
         max_length = 255,
         primary_key = True,
     )
@@ -67,6 +62,7 @@ class Squirrel(models.Model):
         help_text = _('primary_fur_color of squirrel'),
         max_length = 30,
         choices = COLOR_CHOICES,
+        blank = True,
         null = True,
     )
 

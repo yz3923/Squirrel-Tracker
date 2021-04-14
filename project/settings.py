@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'map',
     'sightings',
->>>>>>> 1a689f5204fee8d40d08eaca8823c44e9f3eeee8
 ]
 
 MIDDLEWARE = [

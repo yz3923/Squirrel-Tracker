@@ -9,7 +9,6 @@ from django.shortcuts import get_object_or_404
 from map.models import Squirrel
 from .forms import SquirrelForm
 
->>>>>>> 1a689f5204fee8d40d08eaca8823c44e9f3eeee8
 
 def show_all(request):
     squirrels = Squirrel.objects.all()
@@ -29,15 +28,13 @@ def add(request):
 def edit(request, unique_squirrel_id):
     squirrel = get_object_or_404(Squirrel,pk = unique_squirrel_id)
     if request.method == 'POST':
-        form = form_sightings(request.POST, instance=squirrel)
-        context = {
-                'form': form
-                }
+        form = SquirrelForm(request.POST, instance=squirrel)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/{squirrel_id}')
+            return redirect(f'/sightings/{unique_squirrel_id}')
     else:
-        form = form_sightings(instance=squirrel)
+        form = SquirrelForm(instance=squirrel)
+    context = { 'form': form }
     return render(request, "sightings/edit.html",context)
 
 
@@ -57,7 +54,6 @@ def stats(request):
             'locations':locations,
         }
     return render(request,'sightings/stats.html',context)
->>>>>>> 1a689f5204fee8d40d08eaca8823c44e9f3eeee8
 
 
 
