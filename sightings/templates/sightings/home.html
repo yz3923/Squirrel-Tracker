@@ -1,58 +1,84 @@
+
 <!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.82.0">
+    <title>Cover Template · Bootstrap v5.0</title>
 
-<head> 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
 
 
-<style>
-.center {
-  margin: auto;
-  width: 50%;
-  text-align: center;
-  padding: 70px 0;
-}
-</style>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-</head>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 
+    
+    <!-- Custom styles for this template -->
+    {% load static %}
+    <link href="{% static 'cover.css' %}" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Squirrels Detector</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="">Home</a>
+      </nav>
+    </div>
+  </header>
 
-<body style="background-color:hsla(30,55%,75%);">
+  <main class="px-3">
+    
+    <h3>Find a squirrel ?</h3>
+    <h3>Let us know !</h3>
+    <p class="lead">Our aim is to track all the known squirrels in Central Park.</p>
+    <p class="lead">
+      <a href="/map/" class="btn btn-secondary" href="#" role="button" style="background-color: #D0D1D3; /* Gray */ border: none;">Map</a>
+      <a href="/sightings/" class="btn btn-secondary" href="#" role="button" style="background-color: #D0D1D3; /* Gray */ border: none;">Sightings</a>
+      <a href="/sightings/add" class="btn btn-secondary" href="#" role="button" style="background-color: #D0D1D3; /* Gray */ border: none;">Add</a>
+      <a href="/sightings/stats" class="btn btn-secondary" href="#" role="button" style="background-color: #D0D1D3; /* Gray */ border: none;">Statistics</a>
+    </p>
+  </main>
 
-<div class = "center">
-	<h1 style="font-size:200%;"> Home Page </h1>
-	<br>
-	<form action = 'sightings/'>
-		<button type='submit'> View of Squirrels Sightings </button>
-	</form>
-	<br>
-	<form action = 'map/'>
-		<button type='submit'> View Squirrel Sightings on Map </button>
-	</form>
-	<br>
-	<form action = 'sightings/stats/'>
-		<button type = 'submit'> View Squirrel Stats </button>
-	</form>
-	<br>
-	<br>
-	<p>Distributed by Yuxuan Xia and Yangyi Zheng </p>
-
+  <footer class="mt-auto text-white-50" size = '2'>
+    <p>Work by Yangyi Zheng and Yuxuan Xia</p>
+  </footer>
 </div>
 
-</body>
+
+    
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
 
