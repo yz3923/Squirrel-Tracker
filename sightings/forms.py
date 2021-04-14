@@ -8,4 +8,6 @@ class SquirrelForm(ModelForm):
         model = Squirrel
         fields = '__all__'
         labels = {
-                "unique_squirrel_id": "unique_squirrel_id(cannot be blank)"}              
+                "unique_squirrel_id": "unique_squirrel_id should not be blank"
+            }
+
