@@ -23,37 +23,34 @@
 		<br>
 		Total Counts:
 		<ul>
-			<li>There are {{total}} of squirrels in Central Park </li>
+			<li>There are {{total}} squirrels in Central Park </li>
 		</ul>
 		<br>
 
 		Age Stats:
 		<ul>
-                {% for item in ages %}
-                <li> {{item.age}}:{{item.c}} </li>
-                {% endfor %}
+                	<li>There are {{juvenile_age}} juvenile squirrels in Central Park </li>
+			<li>There are {{adult_age}} adult squirrels in Central Park </li>
                 </ul>
 		<br>
 
-
 		Fur color Stats:
 		<ul>
-                {% for item in colors %}
-                <li> {{item.primary_fur_color}}:{{item.c}} </li>
-                {% endfor %}
+                	<li>There are {{fur_black}} black squirrels in Central Park </li>
+			<li>There are {{fur_cinnamon}} cinnamon squirrels in Central Park </li>
+			<li>There are {{fur_gray}} gray squirrels in Central Park </li>
                 </ul>
 		<br>
 
 
 		Location Stats:
 		<ul>
-		{% for item in locations %}
-		<li> {{item.location}}:{{item.c}} </li>
-		{% endfor %}
+			<li>There are {{location_above}} squirrels are above ground </li>
+			<li>There are {{location_ground}} squirrels are on the ground </li>
+		</ul>
 		<br>
 
 		Shifts Stats:
-		<ul>
 		<ul>
                 {% for item in shifts %}
 		<li> {{item.shift}}:{{item.c}} </li>

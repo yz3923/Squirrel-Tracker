@@ -17,13 +17,14 @@ def show_all(request):
 
 def add(request):
     if request.method == 'POST':
-        form = form_sightings(request.POST)
+        form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/sightings/')
-        else:
-            form = form_sightings()
-        return render(request, 'sightings/add.html', {'form':form})
+        return redirect('/sightings/')
+    else:
+        form = SquirrelForm()
+        context = {'form':form}
+        return render(request, 'sightings/add.html', context)
 
 def edit(request, unique_squirrel_id):
     squirrel = get_object_or_404(Squirrel,pk = unique_squirrel_id)
@@ -41,17 +42,24 @@ def edit(request, unique_squirrel_id):
 def stats(request):
 
     total = Squirrel.objects.count()
-    ages = Squirrel.objects.values('age').annotate(c=Count('age'))
-    fur_colors = Squirrel.objects.values(
-            'primary_fur_color').annotate(c=Count('primary_fur_color'))
+    juvenile_age = Squirrel.objects.filter(age='Juvenile').count()
+    adult_age = Squirrel.objects.filter(age='Adult').count()
+    fur_black = Squirrel.objects.filter(primary_fur_color='Black').count()
+    fur_cinnamon = Squirrel.objects.filter(primary_fur_color='Cinnamon').count()
+    fur_gray = Squirrel.objects.filter(primary_fur_color='Gray').count()
     shifts = Squirrel.objects.values('shift').annotate(c=Count('shift'))
-    locations= Squirrel.objects.values('location').annotate(c=Count('location'))
+    location_above = Squirrel.objects.filter(location='Above Ground').count()
+    location_ground = Squirrel.objects.filter(location='Ground Plane').count()
     context= {
             'total':total,
-            'ages':ages,
-            'fur_colors':fur_colors,
+            'juvenile_age':juvenile_age,
+            'adult_age':adult_age,
+            'fur_black':fur_black,
+            'fur_cinnamon':fur_cinnamon,
+            'fur_gray':fur_gray,
             'shifts':shifts,
-            'locations':locations,
+            'location_above':location_above,
+            'location_ground':location_ground,
         }
     return render(request,'sightings/stats.html',context)
 

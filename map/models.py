@@ -44,8 +44,8 @@ class Squirrel(models.Model):
         help_text = _('age of squirrel'),
         max_length = 30,
         choices = AGE_CHOICES,
+        default='Unknown',
         blank = True,
-        null = True,
     )
 
     Gray = 'Gray'
@@ -63,7 +63,6 @@ class Squirrel(models.Model):
         max_length = 30,
         choices = COLOR_CHOICES,
         blank = True,
-        null = True,
     )
 
     Above = 'Above Ground'
@@ -79,14 +78,12 @@ class Squirrel(models.Model):
         max_length = 30,
         choices = LOCATION_CHOICES,
         blank = True,
-        null = True,
     )
 
     specific_location = models.CharField(
         help_text = _('specific location of squirrel'),
         max_length = 255,
         blank = True,
-        null = True,
     )
 
     running = models.BooleanField(
@@ -123,7 +120,6 @@ class Squirrel(models.Model):
         help_text = _('other activities'),
         max_length = 255,
         blank = True,
-        null = True,
     )
 
     kuks = models.BooleanField(
