@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 
 from map.models import Squirrel
 from .forms import SquirrelForm
-
+from django.core.paginator import Paginator
 
 def show_all(request):
     squirrels = Squirrel.objects.all()
