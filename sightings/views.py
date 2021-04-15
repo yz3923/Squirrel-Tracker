@@ -20,7 +20,7 @@ def add(request):
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('sightings/')
+            return redirect('../')
     else:
         form = SquirrelForm()
 
@@ -39,7 +39,6 @@ def edit(request, unique_squirrel_id):
     context = { 'form': form }
     return render(request, "sightings/edit.html",context)
 
-
 def stats(request):
 
     total = Squirrel.objects.count()
@@ -48,7 +47,8 @@ def stats(request):
     fur_black = Squirrel.objects.filter(primary_fur_color='Black').count()
     fur_cinnamon = Squirrel.objects.filter(primary_fur_color='Cinnamon').count()
     fur_gray = Squirrel.objects.filter(primary_fur_color='Gray').count()
-    shifts = Squirrel.objects.values('shift').annotate(c=Count('shift'))
+    shift_AM = Squirrel.objects.filter(shift='AM').count()
+    shift_PM = Squirrel.objects.filter(shift='PM').count()
     location_above = Squirrel.objects.filter(location='Above Ground').count()
     location_ground = Squirrel.objects.filter(location='Ground Plane').count()
     context= {
@@ -58,7 +58,8 @@ def stats(request):
             'fur_black':fur_black,
             'fur_cinnamon':fur_cinnamon,
             'fur_gray':fur_gray,
-            'shifts':shifts,
+            'shift_AM':shift_AM,
+            'shift_PM':shift_PM,
             'location_above':location_above,
             'location_ground':location_ground,
         }
