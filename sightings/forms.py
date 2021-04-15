@@ -6,9 +6,26 @@ from map.models import Squirrel
 class SquirrelForm(ModelForm):
     class Meta:
         model = Squirrel
-        fields = '__all__'
-        labels = {
-                "unique_squirrel_id": "unique_squirrel_id should not be blank"
-            }
-
-
+        fields = ['latitude',
+        'longitude',
+        'unique_squirrel_id',
+        'shift',
+        'date',
+        'age',
+        'primary_fur_color',
+        'location',
+        'specific_location',
+        'running',
+        'chasing',
+        'climbing',
+        'eating',
+        'foraging',
+        'other_activities',
+        'kuks',
+        'quaas',
+        'moans',
+        'tail_flags',
+        'tail_twitches',
+        'approaches',
+        'indifferent',
+        'runs_from']

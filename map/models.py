@@ -63,6 +63,7 @@ class Squirrel(models.Model):
         max_length = 30,
         choices = COLOR_CHOICES,
         blank = True,
+        default='Unknown',
     )
 
     Above = 'Above Ground'
@@ -77,6 +78,7 @@ class Squirrel(models.Model):
         help_text = _('location of squirrel'),
         max_length = 30,
         choices = LOCATION_CHOICES,
+        default='Unknown',
         blank = True,
     )
 
@@ -84,6 +86,7 @@ class Squirrel(models.Model):
         help_text = _('specific location of squirrel'),
         max_length = 255,
         blank = True,
+        default='Unknown'
     )
 
     running = models.BooleanField(
@@ -120,6 +123,7 @@ class Squirrel(models.Model):
         help_text = _('other activities'),
         max_length = 255,
         blank = True,
+        default = 'Unknown'
     )
 
     kuks = models.BooleanField(

@@ -16,14 +16,15 @@ def show_all(request):
     return render (request, 'sightings/show_all.html', context)
 
 def add(request):
-    if request.method == 'post':
+    if request.method == 'POST':
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('../')
+            return redirect('sightings/')
     else:
         form = SquirrelForm()
-    context = {'form':form,}
+
+    context = {'form': form}
     return render(request, 'sightings/add.html', context)
 
 def edit(request, unique_squirrel_id):
